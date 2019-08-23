@@ -1,10 +1,7 @@
-public class Conway {
+public class Main {
 
     public static void main(String [] argv) {
-        System.out.println("hello");
-
         Solution solution = new Solution();
         solution.solve();
-
     }
 }
