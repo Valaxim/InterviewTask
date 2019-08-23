@@ -2,25 +2,25 @@ import java.util.*;
 
 public class Solution {
 
-    final static String INPUT = " ala ma kota, kot koduje w Javie kota";
+    final static String INPUT = "ala ma kota, kot koduje w Javie kota";
 
     public void solve() {
         String correctInput = removeNonAlphanumericCharacters(INPUT);
         String[] strings = separateInput(correctInput);
-        HashSet<String> strings1 = eliminateDuplicate(strings);
+        HashSet<String> strings1 = eliminateDuplicateToLowerCase(strings);
         Map<Character, Set<String>> map = createMap(strings1);
         printMap(map);
     }
 
     public String removeNonAlphanumericCharacters(String input) {
-        return input.replaceAll("[^a-zA-Z0-9]", " ");
+        return input.replaceAll("[^a-zA-Z]", " ");
     }
 
     public String[] separateInput(String input) {
         return input.split(" ");
     }
 
-    public HashSet<String> eliminateDuplicate(String[] input) {
+    public HashSet<String> eliminateDuplicateToLowerCase(String[] input) {
         HashSet<String> set = new HashSet<>();
         for (String item : input) {
             if (item.length() != 0) {
